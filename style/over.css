@@ -1,0 +1,147 @@
+:root {
+  --heightFlex: 25vh;
+  --widthFlex: 33.33%;
+  --paddingFlex: 3em;
+  --colorboton: rgb(16, 84, 231);
+  --colorbotonsombra: rgb(65, 65, 65);
+  --colorbotonhover: rgb(16, 231, 63);
+  --colorbotonlinea: rgb(132, 224, 247);
+  --degrado: linear-gradient(313deg, #ff0000, #b60000, #860000);
+  --anima: AnimationName 3s ease infinite;
+}
+#div{
+  font-family: 'Bungee shade', cursive;
+  font-size: 60px;
+  
+}
+.otroDiv{
+  font-family: 'Syncopate', sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+div{
+  display: inline-block;
+}
+.arcoiris{
+  color: rgb(253, 0, 0);
+  background-image: radial-gradient(circle at 0% 0%, #7971ea 0, #9269e2 4.17%, #a762d7 8.33%, #b859cb 12.5%, #c751be 16.67%, #d24ab0 20.83%, #dc43a2 25%, #e33e93 29.17%, #e73b83 33.33%, #ea3a74 37.5%, #ea3d65 41.67%, #e84256 45.83%, #e54848 50%, #e04f3a 54.17%, #d9572c 58.33%, #d15e1c 62.5%, #c86607 66.67%, #be6d00 70.83%, #b37300 75%, #a77900 79.17%, #9a7e00 83.33%, #8c8300 87.5%, #7e8700 91.67%, #6e8b00 95.83%, #5d8e00 100%);
+  background-size: 600% 100%;
+  -webkit-animation: AnimationName 3 ease infinite;
+  -moz-animation: AnimationName 3s ease infinite;
+  -o-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+}
+.item-button {
+  display: flex;
+  box-sizing: border-box;
+  order: 0;
+  flex: content;
+  align-self:center;
+  justify-content: center;
+  align-items: center;
+  margin: 2vw;
+  margin-top: 6vw;
+}
+.container-aside button {
+  color: white;
+  /*  width: 25vw;
+  height: 12vh; */
+  display: inline-block;
+  font-size: 1px;
+  transition-duration: 0.4s;
+  font-family: 'Unica One', cursive;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--colorboton);
+  display: block;
+  position: relative;
+  padding: 20px 40px;
+  margin-left: 10px;
+  -webkit-box-shadow: inset 0 0px 0 var(--colorbotonlinea), 0px 0px 0 var(--colorbotonsombra);
+  -moz-box-shadow: inset 0 0px 0 var(--colorbotonlinea), 0px 0px 0 var(--colorbotonsombra);
+  box-shadow: inset 0 0px 0 var(--colorbotonlinea), 0px 10px 0px var(--colorbotonsombra);
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 45px;
+}
+
+.container-aside button:hover {
+  background-color: var(--colorbotonhover);
+  color: white;
+}
+
+.container-aside button:active {
+  top: 10px;
+  background-color: var(--colorboton);
+  -webkit-box-shadow: inset 0 1px 0 var(--colorbotonlinea), inset 0 -3px 0 var(--colorbotonsombra);
+  -moz-box-shadow: inset 0 1px 0 var(--colorbotonlinea), inset 0 -3pxpx 0 var(--colorbotonsombra);
+  box-shadow: inset 0 1px 0 var(--colorbotonlinea), inset 0 -3px 0 var(--colorbotonsombra);
+}
+
+.bor{
+  border: 20px ;
+  border-style:ridge;
+  border-radius: 100px 0px 100px 0px;
+  
+}
+
+.con{
+  background: url("img/confeti.gif");
+}
+.fon1{
+  background: url("img/descansa.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.mov1 {
+  background: linear-gradient(313deg, #ff0000, #b60000, #860000);
+  background-size: 600% 100%;
+
+  -webkit-animation: AnimationName 3 ease infinite;
+  -moz-animation: AnimationName 3s ease infinite;
+  -o-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+}
+.mov2{
+  background: linear-gradient(313deg, #00ff00, #00be00, #006d00);
+  background-size: 600% 100%;
+
+  -webkit-animation: AnimationName 3 ease infinite;
+  -moz-animation: AnimationName 3s ease infinite;
+  -o-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+}
+
+.fondoDiv{
+}
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 51%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 51%}
+  100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 51%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 51%}
+  100%{background-position:0% 50%}
+}
