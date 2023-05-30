@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/flexbox.css">
+    <link rel="stylesheet" href="style/nombre.css">
+    <link rel="stylesheet" href="style/juego.css">
+    <link rel="import" href="nombreForm.html">
+    <script src="functions/functions.js"></script>
+    <script src="functions/engine.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <title>Juego version 0.3</title>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="container-aside">
+            <img src="img/logo.png">
+            <p>*Jugador*: ¡Ayuda a los animales a regresar a su habitat!</p>
+            <!--  <div class="item-button">
+                <button type="button" class="submit">Verificar</button>
+            </div> -->
+            <div class="item-button2">
+                <button type="button" class="modificar" id="btClick">Información</button>
+            </div>
+
+
+        </div>
+        <div class="container-animales">
+
+            <div class="item-1">
+                <div id="IMG1S" align="middle"></div>
+                <div class="droppable" id="droppable1" data-draggable-id="draggable1" align="middle"></div>
+            </div>
+            <div class="item-2" align="middle">
+                <div id="IMG2S"></div>
+                <div class="droppable" id="droppable2" data-draggable-id="draggable2" align="middle"></div>
+            </div>
+            <div class="item-3" align="middle">
+                <div id="IMG3S"> </div>
+                <div class="droppable" id="droppable3" data-draggable-id="draggable3" align="middle"> </div>
+            </div>
+
+            <div class="item-4 draggable" id="IMG1I" draggable="true" align="middle">
+                <!-- <img src="img/4-I.png"> -->
+
+            </div>
+            <div class="item-5 draggable" id="IMG2I" draggable="true" align="middle">
+                <!-- <img src="img/4-I.png"> -->
+            </div>
+
+            <div class="item-6 draggable" id="IMG3I" draggable="true" align="middle">
+                <!-- <img src="img/4-I.png"> -->
+            </div>
+        </div>
+
+    </div>
+    <div class="form-popup" id="myForm">
+        <form class="form-container" method='post'>
+            <canvas width="750" height="400" style="border:1px" id="canva"></canvas>
+
+            <h1 style="text-align: center;">¡Vamos a jugar! </h1>
+
+            <label ><b>Ingresa  tu nombre:</b></label>
+            <input type="text" style="width:300px; height: 10px;" placeholder="Ingrese su nombre" id="nombre" required>
+
+            <button type="button" class="btn" onclick="alta()">Jugar </button>
+            <button type="button" class="btn cancel" onclick="close()" id="btClose">Cancelar</button>
+        </form>
+    </div>
+    <!-- <footer>🔥I'm the footer. My margin pushes me down.🔥</footer> -->
+
+</body>
+<script>
+    $(document).ready(function() {
+        $('#btClick').click(function() {
+            $('#myForm').css('display', 'block');
+        });
+        $('#btClose').click(function() {
+            $('#myForm').css('display', 'none');
+        });
+    });
+
+    window.onload = function() {
+        if (localStorage.getItem("jugador") == null) {
+            $('#myForm').css('display', 'block');
+        }
+        if (bandera036 == 0) {
+            randomize();
+            /* randomSolo(); */
+            setSupImgs();
+            setInfImgs();
+        }
+    }
+
+    //dany    
+     function close(){
+        document.getElementById('myForm').style.display = "none";
+    }
+    function alta(){
+        var nombre = document.getElementById("nombre").value;
+        var jug = JSON.stringify({
+            Nombre: nombre,
+        });
+        localStorage.setItem("jugador",jug);
+        document.getElementById("nombre").value="";
+        close();
+    }
+    var conten = document.getElementById("canva");
+    var ctx = conten.getContext("2d");
+    var img = new Image();
+    img.src = "img/logo.png";
+    img.onload = function() {
+        ctx.drawImage(img, 230, 20, 300, 150);
+    }
+
+
+    ctx.fillStyle = "blue";
+    ctx.font = "bold 20pt baguet script";
+    ctx.fillText("Bienvenido a: ", 20, 20);
+
+    ctx.fillStyle = "blue";
+    ctx.font = "bold 15pt baguet script";
+    ctx.fillText("Este juego esta diseñado para niños de 5 a 10 años ", 120, 250);
+
+    /* 
+    
+    ctx.textAlign = "center";
+   
+    libros = JSON.parse(localStorage.getItem('Libros'));
+    libro = JSON.parse(libros);
+    ctx.font = "bold 40pt baguet script";
+    ctx.fillText(libro.nombre + " " + libro.apellidos,500,250);
+    ctx.font = "bold 20pt Arial";
+    ctx.fillText("por completar el curso: ",500,300);
+    ctx.fillText(libro.curso,500,340);
+    ctx.fillText("en el grado: ",500,380);
+    ctx.fillText(libro.anio,500,420);
+     */
+</script>
+
+</html>
